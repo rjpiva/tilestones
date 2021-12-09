@@ -1,0 +1,55 @@
+{
+  "name": "tilestones",
+  "version": "1.0.0",
+  "description": "A fangame based on the Tellstones King's Gambit board game",
+  "keywords": [
+    "tilestones",
+    "tellstones",
+    "game",
+    "board game",
+    "cli game"
+  ],
+  "homepage": "https://github.com/rjpiva/tilestones#readme",
+  "bugs": "https://github.com/rjpiva/tilestones/issues",
+  "main": "index.js",
+  "bin": {
+    "tilestones": "./index.js"
+  },
+  "scripts": {
+    "start": "npm run compile && node index.js",
+    "test": "jasmine --reporter=jasmine-console-reporter",
+    "coverage": "nyc npm run test",
+    "compile": "tsc",
+    "watch": "tsc -w",
+    "build": "npx pkg dist/src/cli.js --target host --output tiles.exe --debug"
+  },
+  "author": "Renan Piva <rjpiva@gmail.com> (https://github.com/rjpiva)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rjpiva/tilestones.git"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^3.9.1",
+    "@types/node": "^16.10.3",
+    "@types/readline-sync": "^1.4.4",
+    "jasmine": "^3.9.0",
+    "jasmine-console-reporter": "^3.1.0",
+    "nyc": "^15.1.0",
+    "typescript": "^4.4.3"
+  },
+  "nyc": {
+    "all": true,
+    "include": [
+      "dist/src/**/*.js"
+    ],
+    "reporter": [
+      "text"
+    ],
+    "exclude-after-remap": false
+  }
+}
