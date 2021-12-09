@@ -21,7 +21,8 @@
     "coverage": "nyc npm run test",
     "compile": "tsc",
     "watch": "tsc -w",
-    "build": "npx pkg dist/src/cli.js --target host --output tiles.exe --debug"
+    "build": "npx pkg dist/src/cli.js --target host --output tiles.exe --debug",
+    "prepare": "npm run compile"
   },
   "author": "Renan Piva <rjpiva@gmail.com> (https://github.com/rjpiva)",
   "license": "MIT",
